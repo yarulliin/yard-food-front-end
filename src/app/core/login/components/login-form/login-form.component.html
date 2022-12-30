@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <yf-input formControlName="login"
+            label="Login"
+            placeholder="Enter login"
+            [allowClear]="true"
+            [isRequired]="true"></yf-input>
+  <yf-input formControlName="password"
+            label="Password"
+            placeholder="Enter password"
+            [allowClear]="true"
+            [isRequired]="true"></yf-input>
+</form>
+
+<button tuiButton>Auth</button>

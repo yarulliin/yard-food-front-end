@@ -1,1 +1,9 @@
-<p>layout works!</p>
+<tui-loader [overlay]="true"
+            [showLoader]="(isLoaderActive$ | async)!">
+  <section class="header">
+    <button tuiButton [routerLink]="routes.AUTH">Login</button>
+  </section>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</tui-loader>

@@ -1,13 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from "../environments/environment";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'yf-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  public ngOnInit(): void {
-    console.log(environment)
-  }
-}
+export class AppComponent {}

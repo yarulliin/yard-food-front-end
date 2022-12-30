@@ -9,6 +9,16 @@ const routes: Routes = [
   {
     path: ROUTES.EMPTY,
     component: LayoutComponent,
+    children: [
+      {
+        path: ROUTES.EMPTY,
+        loadComponent: () => import('./core/catalog/catalog.component').then(m => m.CatalogComponent)
+      }
+    ]
+  },
+  {
+    path: ROUTES.AUTH,
+    loadComponent: () => import('./core/login/login.component').then(m => m.LoginComponent)
   }
 ];
 
