@@ -14,6 +14,7 @@ import { TuiCurrencyPipeModule } from '@taiga-ui/addon-commerce';
 import { BaseControl } from '../../utils/directives/base-control/base-control.directive';
 
 import { ValidationErrorTips } from '../../utils/interfaces/app.interfaces';
+import { TuiSizeL, TuiSizeS } from '@taiga-ui/core/types';
 
 @Component({
   selector: 'yf-input',
@@ -41,8 +42,10 @@ export class InputComponent extends BaseControl {
   @Input() public error: string;
   @Input() public isRequired: boolean;
   @Input() public allowClear: boolean;
+  @Input() public textfieldLabelOutside = false;
   @Input() public hintContent = '';
   @Input() public currency = '';
+  @Input() public size: TuiSizeL | TuiSizeS = 'l';
   @Input() public set errorMessages(messages: ValidationErrorTips) {
     this._errorTips = { ...messages };
   }

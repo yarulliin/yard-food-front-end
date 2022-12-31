@@ -1,0 +1,33 @@
+@import "mixins";
+
+.header {
+  @include transparentBackgroundColor(0.2, white);
+
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--tui-neutral-bg);
+  box-shadow: 0 0.25rem 1.5rem rgb(0 0 0 / 12%);
+  backdrop-filter: blur(50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > article {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    > yf-input {
+      width: 250px;
+    }
+  }
+}
+
+.logo {
+  font-size: 36px;
+  padding-right: 16px;
+  border-right: 1px solid var(--tui-neutral-bg);
+
+  &:hover {
+    cursor: pointer;
+  }
+}

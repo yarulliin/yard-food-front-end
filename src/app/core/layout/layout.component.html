@@ -1,8 +1,5 @@
 <tui-loader [overlay]="true"
             [showLoader]="(isLoaderActive$ | async)!">
-  <section class="header">
-    <button tuiButton [routerLink]="routes.AUTH">Login</button>
-  </section>
   <section class="content">
     <router-outlet></router-outlet>
     <tui-marker-icon class="action tui-space_right-2"
@@ -10,7 +7,7 @@
                      src="tuiIconCommentLarge"
                      tuiHintDirection="top-right"
                      [tuiHint]="template"
-                     [tuiHintManual]="isHintShown"
+                     [tuiHintManual]="(isHintShown$ | async)!"
                      (click)="toggleHint()"></tui-marker-icon>
   </section>
 </tui-loader>

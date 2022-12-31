@@ -1,9 +1,12 @@
 <tui-input *ngIf="type !== 'password'; else password"
            [tuiHintContent]="hintContent"
            [tuiTextfieldCleaner]="allowClear"
+           [tuiTextfieldLabelOutside]="textfieldLabelOutside"
+           [tuiTextfieldSize]="size"
            [(ngModel)]="formValue">
-  {{ label }}
-  <span class="currency">{{ currency | tuiCurrency }}</span>
+  <ng-container *ngIf="label">{{ label }}</ng-container>
+  <span *ngIf="currency"
+        class="currency">{{ currency | tuiCurrency }}</span>
   <span *ngIf="isRequired"
         class="tui-required"></span>
   <input tuiTextfield

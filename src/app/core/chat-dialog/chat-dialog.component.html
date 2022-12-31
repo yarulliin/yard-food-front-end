@@ -3,16 +3,19 @@
 <!--           src="tuiIconCloseLarge"-->
 <!--           (click)="closeDialog()"></tui-svg>-->
   <section class="chat__messages">
-    <span *ngFor="let message of messages"
+    <article *ngFor="let message of messages"
           class="chat__message"
           [ngClass]="message.id === '321' ? 'left' : 'right'">
-      {{ message.text }}
-    </span>
+      <span class="chat__text">{{ message.text }}</span>
+      <span class="chat__date">{{ message.date! | convertFromIso | date: dateFormat }}</span>
+    </article>
   </section>
   <section class="chat__footer">
     <yf-input label="Message"
               placeholder="Enter message"
+              size="m"
               [formControl]="message"
+              [textfieldLabelOutside]="true"
               [allowClear]="true"></yf-input>
     <tui-marker-icon class="chat__action tui-space_right-2"
                      mode="link"

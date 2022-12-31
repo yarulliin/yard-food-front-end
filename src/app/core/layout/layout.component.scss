@@ -10,14 +10,6 @@
   }
 }
 
-.header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  padding: 8px;
-  z-index: 2;
-}
-
 .footer {
   z-index: 1;
   position: relative;
@@ -28,7 +20,6 @@
 .content {
   box-sizing: border-box;
   height: 100%;
-  padding-top: 120px;
 }
 
 .action {

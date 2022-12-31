@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { CatalogFacadeService } from './services/catalog-facade.service';
 
 import { EnterTheViewportDirective } from '../../utils/directives/enter-the-viewport/enter-the-viewport.directive';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'yf-catalog',
@@ -13,6 +14,7 @@ import { EnterTheViewportDirective } from '../../utils/directives/enter-the-view
   imports: [
     CommonModule,
     EnterTheViewportDirective,
+    HeaderComponent,
   ],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],

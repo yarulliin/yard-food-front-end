@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { TuiButtonModule, TuiHintModule, TuiLoaderModule } from '@taiga-ui/core';
+import { TuiHintModule, TuiLoaderModule } from '@taiga-ui/core';
 import { TuiMarkerIconModule } from '@taiga-ui/kit';
 
 import { ChatDialogComponent } from '../chat-dialog/chat-dialog.component';
@@ -14,8 +14,6 @@ import { WebSocketService } from '../../services/web-socket.service';
 
 import { Message } from '../chat-dialog/utils/interfaces/chat.interfaces';
 
-import { ROUTES } from '../../utils/enums/app.enums';
-
 @Component({
   selector: 'yf-layout',
   standalone: true,
@@ -23,7 +21,6 @@ import { ROUTES } from '../../utils/enums/app.enums';
     CommonModule,
     RouterModule,
     TuiLoaderModule,
-    TuiButtonModule,
     TuiHintModule,
     TuiMarkerIconModule,
     ChatDialogComponent,
@@ -36,10 +33,7 @@ import { ROUTES } from '../../utils/enums/app.enums';
 export class LayoutComponent implements OnInit {
   public isLoaderActive$: BehaviorSubject<boolean> = this.appFacadeService.isLoaderActive$;
   public messages$: BehaviorSubject<Message[] | null> = this.webSocketService.message$;
-
-  public isHintShown = false;
-
-  public readonly routes = ROUTES;
+  public isHintShown$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
     private appFacadeService: AppFacadeService,
@@ -52,7 +46,7 @@ export class LayoutComponent implements OnInit {
   }
 
   public toggleHint(): void {
-    this.isHintShown = !this.isHintShown;
+    this.isHintShown$.next(!this.isHintShown$.value);
   }
 
   public sendMessage(message: string): void {

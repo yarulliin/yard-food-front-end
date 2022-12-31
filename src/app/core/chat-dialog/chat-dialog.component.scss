@@ -30,10 +30,8 @@
   &__message {
     display: flex;
     border-radius: var(--tui-radius-l);
-    max-width: 50%;
+    max-width: 75%;
     white-space: pre-line;
-    word-break: break-word;
-    padding: 8px;
 
     &.left {
       align-self: flex-start;
@@ -50,6 +48,11 @@
     }
   }
 
+  &__text {
+    padding: 8px;
+    word-break: break-word;
+  }
+
   &__footer {
     display: flex;
     align-items: center;
@@ -62,5 +65,12 @@
 
   &__action:hover {
     cursor: pointer;
+  }
+
+  &__date {
+    font-size: 8px;
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
   }
 }
