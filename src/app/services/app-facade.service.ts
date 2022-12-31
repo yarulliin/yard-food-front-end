@@ -12,9 +12,9 @@ export class AppFacadeService {
     return this._isLoaderActive$;
   }
 
+  constructor() { }
+
   public changeLoaderStatus(status: boolean): void {
     this._isLoaderActive$.next(status);
   }
-
-  constructor() { }
 }

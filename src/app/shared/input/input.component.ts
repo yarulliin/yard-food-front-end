@@ -14,7 +14,6 @@ import { TuiCurrencyPipeModule } from "@taiga-ui/addon-commerce";
 import { BaseControl } from "../../utils/directives/base-control/base-control.directive";
 
 import { ValidationErrorTips } from "../../utils/interfaces/app.interfaces";
-import { HorizontalDirection } from "../../utils/types/app.types";
 
 @Component({
   selector: 'yf-input',

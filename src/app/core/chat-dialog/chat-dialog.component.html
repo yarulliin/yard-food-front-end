@@ -1,0 +1,23 @@
+<section class="chat">
+<!--  <tui-svg class="chat__close-icon"-->
+<!--           src="tuiIconCloseLarge"-->
+<!--           (click)="closeDialog()"></tui-svg>-->
+  <section class="chat__messages">
+    <span *ngFor="let message of messages"
+          class="chat__message"
+          [ngClass]="message.id === '321' ? 'left' : 'right'">
+      {{ message.text }}
+    </span>
+  </section>
+  <section class="chat__footer">
+    <yf-input label="Message"
+              placeholder="Enter message"
+              [formControl]="message"
+              [allowClear]="true"></yf-input>
+    <tui-marker-icon class="chat__action tui-space_right-2"
+                     mode="link"
+                     size="s"
+                     src="tuiIconArrowUp"
+                     (click)="sendMessage()"></tui-marker-icon>
+  </section>
+</section>

@@ -1,0 +1,8 @@
+<ng-container *ngFor="let item of items$ | async; let last = last">
+  <div *ngIf="last"
+       yfEnterTheViewport
+       (visibilityChange)="getItems()"></div>
+  <img [src]="item.img"
+       [alt]="item.name">
+  <span>{{ item.name }}</span>
+</ng-container>

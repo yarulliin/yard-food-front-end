@@ -5,5 +5,18 @@
   </section>
   <section class="content">
     <router-outlet></router-outlet>
+    <tui-marker-icon class="action tui-space_right-2"
+                     mode="success"
+                     src="tuiIconCommentLarge"
+                     tuiHintDirection="top-right"
+                     [tuiHint]="template"
+                     [tuiHintManual]="isHintShown"
+                     (click)="toggleHint()"></tui-marker-icon>
   </section>
 </tui-loader>
+
+<ng-template #template>
+  <yf-chat-dialog [messages]="(messages$ | async)!"
+                  (emitCloseDialog)="toggleHint()"
+                  (emitSendMessage)="sendMessage($event)"></yf-chat-dialog>
+</ng-template>

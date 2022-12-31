@@ -1,0 +1,66 @@
+.chat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 250px;
+  height: 500px;
+
+  &__close-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__messages {
+    background: var(--tui-primary-text);
+    border-radius: var(--tui-radius-l);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  &__message {
+    display: flex;
+    border-radius: var(--tui-radius-l);
+    max-width: 50%;
+    white-space: pre-line;
+    word-break: break-word;
+    padding: 8px;
+
+    &.left {
+      align-self: flex-start;
+      background: var(--tui-primary-text);
+      border: 1px solid var(--tui-neutral-bg);
+      color: var(--tui-text-01);
+    }
+
+    &.right {
+      justify-content: flex-end;
+      align-self: flex-end;
+      color: var(--tui-primary-text);
+      background: var(--tui-link);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > yf-input {
+      flex: 1;
+    }
+  }
+
+  &__action:hover {
+    cursor: pointer;
+  }
+}
