@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { TuiButtonModule } from "@taiga-ui/core";
+import { TuiButtonModule } from '@taiga-ui/core';
 
-import { InputComponent } from "../../../../shared/input/input.component";
-import { FormDirective } from "../../../../utils/directives/form/form.directive";
+import { InputComponent } from '../../../../shared/input/input.component';
+import { FormDirective } from '../../../../utils/directives/form/form.directive';
 
-import { LoginForm } from "./utils/interfaces/login-form.interfaces";
-import { Credentials } from "../../utils/interfaces/login.interfaces";
+import { LoginForm } from './utils/interfaces/login-form.interfaces';
+import { Credentials } from '../../utils/interfaces/login.interfaces';
 
 @Component({
   selector: 'yf-login-form',

@@ -1,9 +1,9 @@
 import { Directive, HostListener } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NgControl } from '@angular/forms';
 
-import { TuiValidationError } from "@taiga-ui/cdk";
+import { TuiValidationError } from '@taiga-ui/cdk';
 
-import { ValidationErrorTips } from "../../interfaces/app.interfaces";
+import { ValidationErrorTips } from '../../interfaces/app.interfaces';
 
 @Directive()
 export class BaseControl implements ControlValueAccessor {

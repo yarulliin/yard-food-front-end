@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { WebSocketService } from './web-socket.service';
 
 describe('WebSocketService', () => {
-  let service: WebSocketService;
+  let service: WebSocketService<string>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

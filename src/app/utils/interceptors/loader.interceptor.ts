@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 
-import { finalize, Observable } from "rxjs";
+import { finalize, Observable } from 'rxjs';
 
-import { AppFacadeService } from "../../services/app-facade.service";
+import { AppFacadeService } from '../../services/app-facade.service';
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {

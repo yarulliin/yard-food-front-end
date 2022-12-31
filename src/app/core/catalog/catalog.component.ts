@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from 'rxjs';
 
-import { CatalogFacadeService } from "./services/catalog-facade.service";
+import { CatalogFacadeService } from './services/catalog-facade.service';
 
-import { EnterTheViewportDirective } from "../../utils/directives/enter-the-viewport/enter-the-viewport.directive";
+import { EnterTheViewportDirective } from '../../utils/directives/enter-the-viewport/enter-the-viewport.directive';
 
 @Component({
   selector: 'yf-catalog',

@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { AbstractControl, FormGroup } from "@angular/forms";
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Directive()
 export class FormDirective<T extends { [K in keyof T]: AbstractControl }> {

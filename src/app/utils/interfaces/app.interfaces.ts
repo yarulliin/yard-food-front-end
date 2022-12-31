@@ -1,4 +1,4 @@
-import { TuiValidationError } from "@taiga-ui/cdk";
+import { TuiValidationError } from '@taiga-ui/cdk';
 
 export interface ValidationError {
   [key: string]: ValidationErrorTips;

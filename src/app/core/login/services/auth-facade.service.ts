@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, shareReplay } from "rxjs";
+import { BehaviorSubject, shareReplay } from 'rxjs';
 
-import { AuthApiService } from "./auth-api.service";
+import { AuthApiService } from './auth-api.service';
 
-import { Credentials } from "../utils/interfaces/login.interfaces";
+import { Credentials } from '../utils/interfaces/login.interfaces';
 
 @Injectable({
   providedIn: 'root'

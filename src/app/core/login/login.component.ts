@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from 'rxjs';
 
-import { LoginFormComponent } from "./components/login-form/login-form.component";
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
-import { AuthFacadeService } from "./services/auth-facade.service";
+import { AuthFacadeService } from './services/auth-facade.service';
 
-import { Credentials } from "./utils/interfaces/login.interfaces";
+import { Credentials } from './utils/interfaces/login.interfaces';
 
 @Component({
   selector: 'yf-login',

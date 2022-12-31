@@ -1,6 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Host, OnDestroy, Output } from '@angular/core';
 
-import { bind } from "../../decorators/bind.decorator";
+import { bind } from '../../decorators/bind.decorator';
 
 @Directive({
   selector: '[yfEnterTheViewport]',

@@ -7,13 +7,13 @@ import {
   TuiHintModule,
   TuiPrimitiveTextfieldModule,
   TuiTextfieldControllerModule
-} from "@taiga-ui/core";
-import { TuiFieldErrorPipeModule, TuiInputModule, TuiInputPasswordModule } from "@taiga-ui/kit";
-import { TuiCurrencyPipeModule } from "@taiga-ui/addon-commerce";
+} from '@taiga-ui/core';
+import { TuiFieldErrorPipeModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
+import { TuiCurrencyPipeModule } from '@taiga-ui/addon-commerce';
 
-import { BaseControl } from "../../utils/directives/base-control/base-control.directive";
+import { BaseControl } from '../../utils/directives/base-control/base-control.directive';
 
-import { ValidationErrorTips } from "../../utils/interfaces/app.interfaces";
+import { ValidationErrorTips } from '../../utils/interfaces/app.interfaces';
 
 @Component({
   selector: 'yf-input',

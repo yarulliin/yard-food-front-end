@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from 'rxjs';
 
-import { CatalogApiService } from "./catalog-api.service";
+import { CatalogApiService } from './catalog-api.service';
 
 @Injectable({
   providedIn: 'root'
