@@ -4,14 +4,18 @@ import { BehaviorSubject } from "rxjs";
 
 import { io, Socket } from "socket.io-client";
 
+import { environment } from "../../environments/environment";
+
+const { baseUrl } = environment;
+
 @Injectable()
 export class WebSocketService<T> {
   public message$: BehaviorSubject<T | null> = new BehaviorSubject<T | null>(null);
 
   private socket: Socket;
 
-  public connect(url: string): void {
-    this.socket = io(url);
+  public connect(): void {
+    this.socket = io(baseUrl);
   }
 
   public disconnect(): void {

@@ -61,6 +61,6 @@ export class LayoutComponent implements OnInit {
   }
 
   private connectToWebSocket(): void {
-    this.webSocketService.connect('http://localhost:3000');
+    this.webSocketService.connect();
   }
 }
