@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, Host, Output } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, EventEmitter, Host, OnDestroy, Output } from '@angular/core';
 
 import { bind } from "../../decorators/bind.decorator";
 
@@ -6,7 +6,7 @@ import { bind } from "../../decorators/bind.decorator";
   selector: '[yfEnterTheViewport]',
   standalone: true
 })
-export class EnterTheViewportDirective {
+export class EnterTheViewportDirective implements AfterViewInit, OnDestroy {
   @Output() public visibilityChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private observer: IntersectionObserver;

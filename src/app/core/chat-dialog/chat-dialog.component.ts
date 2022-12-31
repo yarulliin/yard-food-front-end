@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import { TuiSvgModule } from "@taiga-ui/core";
-import { TuiMarkerIconModule } from "@taiga-ui/kit";
+import { TuiSvgModule } from '@taiga-ui/core';
+import { TuiMarkerIconModule } from '@taiga-ui/kit';
 
-import { InputComponent } from "../../shared/input/input.component";
+import { InputComponent } from '../../shared/input/input.component';
 
-import { ConvertFromIsoPipe } from "../../utils/pipes/convert-from-iso/convert-from-iso.pipe";
+import { ConvertFromIsoPipe } from '../../utils/pipes/convert-from-iso/convert-from-iso.pipe';
 
-import { Message } from "./utils/interfaces/chat.interfaces";
+import { Message } from './utils/interfaces/chat.interfaces';
 
-import { TIME_FORMAT } from "../../utils/consts/date.consts";
+import { TIME_FORMAT } from '../../utils/consts/date.consts';
 
 @Component({
   selector: 'yf-chat-dialog',

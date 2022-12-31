@@ -16,7 +16,7 @@ export class CatalogFacadeService {
 
   constructor(private catalogService: CatalogApiService) { }
 
-  public setItems(value: any[], isRefresh: boolean = false): void {
+  public setItems(value: any[], isRefresh = false): void {
     isRefresh
       ? this._items$.next(value)
       : this._items$.next([...this._items$.value || [], ...value]);

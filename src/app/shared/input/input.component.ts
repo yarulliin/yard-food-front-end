@@ -35,14 +35,14 @@ import { ValidationErrorTips } from "../../utils/interfaces/app.interfaces";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputComponent extends BaseControl {
-  @Input() public label: string = '';
-  @Input() public placeholder: string = '';
+  @Input() public label = '';
+  @Input() public placeholder = '';
   @Input() public type: string;
   @Input() public error: string;
   @Input() public isRequired: boolean;
   @Input() public allowClear: boolean;
-  @Input() public hintContent: string = '';
-  @Input() public currency: string = '';
+  @Input() public hintContent = '';
+  @Input() public currency = '';
   @Input() public set errorMessages(messages: ValidationErrorTips) {
     this._errorTips = { ...messages };
   }
