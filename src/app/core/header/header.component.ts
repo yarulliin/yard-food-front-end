@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import { Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 
 import { TuiButtonModule } from '@taiga-ui/core';
 
 import { InputComponent } from '../../shared/input/input.component';
+import { AvatarComponent } from '../../shared/avatar/avatar.component';
 
 import { ROUTES } from '../../utils/enums/app.enums';
-import { AvatarComponent } from '../../shared/avatar/avatar.component';
 
 @Component({
   selector: 'yf-header',
@@ -48,7 +48,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private initSearchListener(): void {
     this.search.valueChanges
-      .pipe(takeUntil(this.subscription$))
+      .pipe(
+        debounceTime(1000),
+        distinctUntilChanged(),
+        takeUntil(this.subscription$)
+      )
       .subscribe((search: string) => this.emitSearch.emit(search));
   }
 }
