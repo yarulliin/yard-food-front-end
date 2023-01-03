@@ -4,11 +4,18 @@
           [routerLink]="routes.EMPTY">yard.food</span>
     <yf-input label="Search"
               size="m"
+              [formControl]="search"
               [allowClear]="true"
               [textfieldLabelOutside]="true"></yf-input>
   </article>
-  <button tuiButton
-          appearance="secondary"
-          size="m"
-          [routerLink]="routes.AUTH">Войти</button>
+  <yf-avatar *ngIf="user; else loginButton"
+             size="m"
+             [text]="user"
+             [routerLink]="routes.PROFILE"></yf-avatar>
+  <ng-template #loginButton>
+    <button tuiButton
+            appearance="secondary"
+            size="m"
+            [routerLink]="routes.AUTH">Войти</button>
+  </ng-template>
 </section>

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './core/layout/layout.component';
 
+import { ItemResolverService } from './utils/resolvers/item-resolver.service';
+
 import { ROUTES } from './utils/enums/app.enums';
 
 const routes: Routes = [
@@ -13,7 +15,16 @@ const routes: Routes = [
       {
         path: ROUTES.EMPTY,
         loadComponent: () => import('./core/catalog/catalog.component').then(m => m.CatalogComponent)
-      }
+      },
+      {
+        path: ROUTES.PROFILE,
+        loadComponent: () => import('./core/profile/profile.component').then(m => m.ProfileComponent)
+      },
+      {
+        path: ROUTES.PATH_WITH_ID,
+        resolve: { item: ItemResolverService },
+        loadComponent: () => import('./core/item/item.component').then(m => m.ItemComponent)
+      },
     ]
   },
   {

@@ -1,0 +1,12 @@
+<tui-island class="card tui-island tui-island_hoverable">
+  <img [src]="item.img"
+       [alt]="item.name">
+  <section class="card__item">
+    <span [class.tui-skeleton]="showSkeleton">{{ item.name }}</span>
+    <section class="card__rating"
+             [class.tui-skeleton]="showSkeleton">
+      <tui-svg src="tuiIconStarFilled"></tui-svg>
+      <span>{{ item.rate }}</span>
+    </section>
+  </section>
+</tui-island>

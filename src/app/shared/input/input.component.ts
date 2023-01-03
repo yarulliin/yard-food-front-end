@@ -10,11 +10,11 @@ import {
 } from '@taiga-ui/core';
 import { TuiFieldErrorPipeModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { TuiCurrencyPipeModule } from '@taiga-ui/addon-commerce';
+import { TuiSizeL, TuiSizeS } from '@taiga-ui/core/types';
 
 import { BaseControl } from '../../utils/directives/base-control/base-control.directive';
 
 import { ValidationErrorTips } from '../../utils/interfaces/app.interfaces';
-import { TuiSizeL, TuiSizeS } from '@taiga-ui/core/types';
 
 @Component({
   selector: 'yf-input',

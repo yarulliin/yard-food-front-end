@@ -1,9 +1,10 @@
 <yf-header></yf-header>
-<ng-container *ngFor="let item of items$ | async; let last = last">
-  <div *ngIf="last"
-       yfEnterTheViewport
-       (visibilityChange)="getItems()"></div>
-  <img [src]="item.img"
-       [alt]="item.name">
-  <span>{{ item.name }}</span>
-</ng-container>
+<section class="catalog">
+  <ng-container *ngFor="let item of items$ | async; let last = last">
+    <yf-card [routerLink]="item.id"
+             [item]="item"></yf-card>
+    <div *ngIf="last"
+         yfEnterTheViewport
+         (visibilityChange)="getItems($event)"></div>
+  </ng-container>
+</section>
