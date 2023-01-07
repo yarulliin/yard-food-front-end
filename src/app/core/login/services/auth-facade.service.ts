@@ -1,28 +1,36 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, shareReplay } from 'rxjs';
+import { Observable, shareReplay, tap } from 'rxjs';
 
 import { AuthApiService } from './auth-api.service';
+import { LocalStorageService } from '../../../services/local-storage.service';
+import { RouterService } from '../../../services/router.service';
 
-import { Credentials } from '../utils/interfaces/login.interfaces';
+import { Credentials, User } from '../utils/interfaces/login.interfaces';
+
+import { STORAGE_KEYS } from '../../../utils/enums/app.enums';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthFacadeService {
-  private _user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private _user$: Observable<User>;
 
-  public get user$(): BehaviorSubject<any> {
+  public get user$(): Observable<User> {
     return this._user$;
   }
 
-  constructor(private authService: AuthApiService) { }
+  constructor(
+    private authService: AuthApiService,
+    private localStorageService: LocalStorageService,
+    private routerService: RouterService,
+  ) { }
 
   public auth(credentials: Credentials): void {
-    this.setUser(this.authService.auth(credentials).pipe(shareReplay(1)));
-  }
-
-  public setUser(user: any): void {
-    this._user$.next(user);
+    this._user$ = this.authService.auth(credentials).pipe(
+      shareReplay(1),
+      tap((user: User) => this.localStorageService.setItem<User>(STORAGE_KEYS.USER, user)),
+      tap(() => this.routerService.navigate())
+    );
   }
 }

@@ -1,0 +1,21 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  > img {
+    position: fixed;
+    top: -8px;
+    left: -12px;
+    height: 104%;
+    object-fit: cover;
+    filter: blur(10px);
+  }
+
+  .form {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    padding: 0 25%;
+  }
+}

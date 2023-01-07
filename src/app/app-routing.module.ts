@@ -3,11 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './core/layout/layout.component';
 
-import { ItemResolverService } from './utils/resolvers/item-resolver.service';
+import { ItemResolverService } from './utils/guards/item-resolver/item-resolver.service';
 
 import { ROUTES } from './utils/enums/app.enums';
 
+import { AuthGuard } from './utils/guards/auth/auth.guard';
+
 const routes: Routes = [
+  {
+    path: ROUTES.AUTH,
+    loadComponent: () => import('./core/login/login.component').then(m => m.LoginComponent)
+  },
   {
     path: ROUTES.EMPTY,
     component: LayoutComponent,
@@ -23,14 +29,11 @@ const routes: Routes = [
       {
         path: ROUTES.PATH_WITH_ID,
         resolve: { item: ItemResolverService },
+        canActivate: [AuthGuard],
         loadComponent: () => import('./core/item/item.component').then(m => m.ItemComponent)
       },
     ]
   },
-  {
-    path: ROUTES.AUTH,
-    loadComponent: () => import('./core/login/login.component').then(m => m.LoginComponent)
-  }
 ];
 
 @NgModule({

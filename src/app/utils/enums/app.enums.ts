@@ -4,3 +4,7 @@ export enum ROUTES {
   PATH_WITH_ID = ':id',
   PROFILE = 'profile'
 }
+
+export enum STORAGE_KEYS {
+  USER = 'user',
+}
