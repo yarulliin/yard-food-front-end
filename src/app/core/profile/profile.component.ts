@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { Observable } from 'rxjs';
+
+import { ProfileFacadeService } from './services/profile-facade.service';
+
 @Component({
   selector: 'yf-profile',
   standalone: true,
@@ -10,5 +14,8 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileComponent {
+  public info$: Observable<any> = this.profileFacadeService.info$;
+  public orders$: Observable<any> = this.profileFacadeService.orders$;
 
+  constructor(private profileFacadeService: ProfileFacadeService) {}
 }

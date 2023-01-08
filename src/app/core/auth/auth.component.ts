@@ -10,14 +10,14 @@ import { AuthFacadeService } from './services/auth-facade.service';
 import { Credentials, User } from './utils/interfaces/login.interfaces';
 
 @Component({
-  selector: 'yf-login',
+  selector: 'yf-auth',
   standalone: true,
   imports: [CommonModule, LoginFormComponent],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent {
+export class AuthComponent {
   public user$: Observable<User | null> = this.authFacadeService.user$;
 
   constructor(private authFacadeService: AuthFacadeService) {}

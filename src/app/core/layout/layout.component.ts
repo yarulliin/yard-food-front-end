@@ -9,8 +9,8 @@ import { TuiMarkerIconModule } from '@taiga-ui/kit';
 
 import { ChatDialogComponent } from '../chat-dialog/chat-dialog.component';
 
-import { AppFacadeService } from '../../services/app-facade.service';
-import { WebSocketService } from '../../services/web-socket.service';
+import { AppFacadeService } from '../../services/app-facade/app-facade.service';
+import { WebSocketService } from '../../services/web-socket/web-socket.service';
 
 import { Message } from '../chat-dialog/utils/interfaces/chat.interfaces';
 

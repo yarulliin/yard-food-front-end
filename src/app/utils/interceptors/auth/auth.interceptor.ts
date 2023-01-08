@@ -8,13 +8,13 @@ import {
 
 import { Observable } from 'rxjs';
 
-import { LocalStorageService } from '../../services/local-storage.service';
+import { LocalStorageService } from '../../../services/local-storage/local-storage.service';
 
-import { User } from '../../core/login/utils/interfaces/login.interfaces';
+import { User } from '../../../core/auth/utils/interfaces/login.interfaces';
 
-import { STORAGE_KEYS } from '../enums/app.enums';
+import { STORAGE_KEYS } from '../../enums/app.enums';
 
-import { TOKEN_BLACKLIST_ROUTES, tokenTemplate } from '../consts/app.consts';
+import { TOKEN_BLACKLIST_ROUTES, tokenTemplate } from '../../consts/app.consts';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

@@ -4,7 +4,7 @@
     <yf-card [routerLink]="item.id"
              [item]="item"></yf-card>
     <div *ngIf="last"
-         yfEnterTheViewport
-         (visibilityChange)="getItems($event)"></div>
+         yfPagination
+         (loadData)="getItems($event)"></div>
   </ng-container>
 </section>

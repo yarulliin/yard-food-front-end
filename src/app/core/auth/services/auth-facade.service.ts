@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, shareReplay, tap } from 'rxjs';
 
 import { AuthApiService } from './auth-api.service';
-import { LocalStorageService } from '../../../services/local-storage.service';
-import { RouterService } from '../../../services/router.service';
+import { LocalStorageService } from '../../../services/local-storage/local-storage.service';
+import { RouterService } from '../../../services/router/router.service';
 
 import { Credentials, User } from '../utils/interfaces/login.interfaces';
 

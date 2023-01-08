@@ -3,7 +3,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 
 import { finalize, Observable } from 'rxjs';
 
-import { AppFacadeService } from '../../services/app-facade.service';
+import { AppFacadeService } from '../../../services/app-facade/app-facade.service';
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {

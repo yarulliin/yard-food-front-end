@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, UrlTree } from '@angular/router';
 
-import { RouterService } from '../../../services/router.service';
-import { LocalStorageService } from '../../../services/local-storage.service';
+import { RouterService } from '../../../services/router/router.service';
+import { LocalStorageService } from '../../../services/local-storage/local-storage.service';
 
-import { User } from '../../../core/login/utils/interfaces/login.interfaces';
+import { User } from '../../../core/auth/utils/interfaces/login.interfaces';
 
 import { ROUTES, STORAGE_KEYS } from '../../enums/app.enums';
 

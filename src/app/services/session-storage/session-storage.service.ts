@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 
-import { StorageClass } from '../utils/classes/storage-class';
+import { Storage } from '../../utils/classes/storage/storage';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SessionStorageService implements StorageClass  {
+export class SessionStorageService implements Storage  {
   public getItem<T>(key: string): T {
     return JSON.parse(sessionStorage.getItem(key) || '[]');
   }
